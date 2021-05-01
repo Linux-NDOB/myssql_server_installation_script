@@ -38,7 +38,7 @@ echo  "WELCOME TO THE SQL SERVER INSTALLATION SCRIPT"
 echo "###############################################"
 
 title="INSTALALTION SCRIPT"
-prompt="Pick an option:"
+prompt="Pick an option(Per NUMBERS):"
 options=("INSTALL FOR UBUNTU 16.04" "INSTALL FOR UBUNTU 18.04" "INSTALL FOR UBUNTU 20.04" "UNISTALL")
 
 echo "$tittle"
@@ -103,9 +103,9 @@ sudo apt-get update
 
 sudo apt-get install mssql-tools
 
-###############################################
+echo "###############################################"
 echo "NOW SQL SERVER IS INATLLED ON YOUR DEVICE"
-###############################################
+echo "###############################################"
 
 echo "PROCEDING TO SHOW ANOTHER OPTIONS"
 
@@ -283,9 +283,9 @@ sudo apt-get update
 sudo apt-get install mssql-tools
 
 
-###############################################
+echo "###############################################"
 echo "NOW SQL SERVER IS INATLLED ON YOUR DEVICE"
-###############################################
+echo "###############################################"
 
 echo "PROCEDING TO SHOW ANOTHER OPTIONS"
 
