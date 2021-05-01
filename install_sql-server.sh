@@ -31,30 +31,6 @@ for x in {1..100} ; do
     sleep .1   # do some work here
 done ; echo
 
-#ADDED PROGRESS BAR
-
-echo "###############################################"
-echo  "WELCOME TO THE SQL SERVER INSTALLATION SCRIPT"
-echo "###############################################"
-
-title="INSTALALTION SCRIPT"
-prompt="Pick an option(Per NUMBERS):"
-options=("INSTALL FOR UBUNTU 16.04" "INSTALL FOR UBUNTU 18.04" "INSTALL FOR UBUNTU 20.04" "UNISTALL")
-
-echo "$tittle"
-PS3="$prompt "
-select opt in "${options[@]}" "Quit"; do 
-    case "$REPLY" in
-    1) _forUbuntu16;;
-    2) _forUbuntu18;;
-    3) _forUbuntu20;;
-    $((${#options[@]}+1))) echo "Goodbye!"; break;;
-    *) echo "Invalid option. Try another one.";continue;;
-    esac
-
-done
-
-
 #COMPLETE INSTALLATION SCRIPT FOR UBUNTU 20.0.4
 _forUbuntu20(){
 echo "Importing the public repository GPG keys"
@@ -324,7 +300,33 @@ source ~/.bashrc
 fi
 }
 
+
+
+#ADDED PROGRESS BAR
+
+echo "###############################################"
+echo  "WELCOME TO THE SQL SERVER INSTALLATION SCRIPT"
+echo "###############################################"
+
+title="INSTALALTION SCRIPT"
+prompt="Pick an option(Per NUMBERS):"
+options=("${CYAN}INSTALL FOR UBUNTU 16.04${NONE}" "INSTALL FOR UBUNTU 18.04" "INSTALL FOR UBUNTU 20.04" "UNISTALL")
+
+echo "$tittle"
+PS3="$prompt "
+select opt in "${options[@]}" "Quit"; do 
+    case "$REPLY" in
+    1) _forUbuntu16;;
+    2) _forUbuntu18;;
+    3) _forUbuntu20;;
+    $((${#options[@]}+1))) echo "Goodbye!"; break;;
+    *) echo "Invalid option. Try another one.";continue;;
+    esac
 tput sgr0
+done
+
+
+
 
 
 
